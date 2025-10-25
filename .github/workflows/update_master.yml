@@ -1,0 +1,23 @@
+name: Push and update Pillar
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.7
+
+      - name: Update Pillar
+        run: |
+          rm -rf .git*
+
+          if [ ! -d /srv/pillar ]; then
+              mkdir /srv/pillar
+          fi
+          cp -r ./ /srv/pillar
