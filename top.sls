@@ -5,8 +5,9 @@ base:
 #  'adminconsole':
 #    - profile.adminconsole
 
-  'hub':
-    - users.hub
+  'lothlorien':
+    - users.homelab
 
   'rivendell':
-    - users.rivendell
+    - users.homelab
+
