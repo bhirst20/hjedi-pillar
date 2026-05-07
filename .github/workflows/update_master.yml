@@ -20,4 +20,4 @@ jobs:
           if [ ! -d /srv/pillar ]; then
               mkdir /srv/pillar
           fi
-          cp -r ./ /srv/pillar
+          rsync -a --delete ./ /srv/salt
